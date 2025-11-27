@@ -1,5 +1,4 @@
-# smartlight-slwf01pro21 - ESPHome firmware for the SMARTLIGHT SLWF-01pro (v.2.1)
-Air conditioner Wi-Fi module for Midea, Idea, Neoclima, Electrolux, Beko and many more.
+# smartlight-slwf01pro21 - ESPHome firmware for the SMARTLIGHT SLWF-01pro (v.2.1) Air conditioner Wi-Fi module for Midea, Idea, Neoclima, Electrolux, Beko and many more.
 
 https://smartlight.me/smart-home-devices/wifi-devices/wifi-dongle-air-conditioners-midea-idea-electrolux-for-home-assistant
 
