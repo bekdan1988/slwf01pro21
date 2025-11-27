@@ -1,7 +1,7 @@
 # These substitutions allow the end user to override certain values
 substitutions:
-  name: air-conditioner
-  friendly_name: "Air Conditioner"
+  name: legkondicionalo
+  friendly_name: "Légkondícionáló"
   
   # Additional substitutions could be added here to make it really easy for the user to override defaults.
   # I am adding a some for example purposes.
@@ -26,7 +26,7 @@ esphome:
     name: SMLIGHT.SLWF-01Pro
     version: "2.1"
 
-  platform: ESP8266
+esp8266:
   board: esp12e
 
 # This should point to the public location of this yaml file.
@@ -68,17 +68,17 @@ uart:
 button:
   - platform: factory_reset
     id: factory_reset_btn
-    name: Factory reset
+    name: Gyári visszaállítás
 # "Display toggle" button
   - platform: template
-    name: ${friendly_name} Display Toggle
+    name: ${friendly_name} Kijelző kapcsoló
     id: midea_display_toggle
     icon: mdi:theme-light-dark
     on_press:
       midea_ac.display_toggle:
 # "Swing step" button
   - platform: template
-    name: ${friendly_name} Swing Step
+    name: ${friendly_name} Zsalumozgatás
     id: midea_swing_step
     icon: mdi:tailwind
     on_press:
@@ -117,15 +117,15 @@ climate:
       - HORIZONTAL
       - BOTH
     outdoor_temperature:        # Optional. Outdoor temperature sensor (may display incorrect values after long inactivity).
-      name: ${friendly_name} Outdoor Temperature
+      name: ${friendly_name} Külső hőmérséklet
     power_usage:                # Optional. Power usage sensor (only for devices that support this feature).
-      name: ${friendly_name} Power Usage
+      name: ${friendly_name} Energiafogyasztás
     humidity_setpoint:          # Optional. Indoor humidity sensor (only for devices that support this feature).
-      name: ${friendly_name} Indoor Humidity
+      name: ${friendly_name} Beltéri páratartalom
 
 switch:
   - platform: template
-    name: ${friendly_name} Beeper
+    name: ${friendly_name} Csipogó
     id: midea_beeper
     icon: mdi:volume-source
     restore_mode: RESTORE_DEFAULT_OFF
@@ -153,18 +153,18 @@ sensor:
 #        temperature: !lambda "return x;"
 #        beeper: false
   - platform: wifi_signal
-    name: ${friendly_name} Wi-Fi Signal
+    name: ${friendly_name} Wi-Fi jel
     update_interval: 60s
   - platform: uptime
-    name: "Uptime"
+    name: "Üzemidő"
     id: uptime_sec
     internal: true
   - platform: template
-    name: ${friendly_name} Uptime Days
+    name: ${friendly_name} Üzemidő napokban
     lambda: |-
       return (id(uptime_sec).state/60)/60/24;
     icon: mdi:clock-start
-    unit_of_measurement: days
+    unit_of_measurement: nap
     update_interval: 60s
     
 # "Power toggle" script
