@@ -4,4 +4,4 @@ https://smartlight.me/smart-home-devices/wifi-devices/wifi-dongle-air-conditione
 
 # What changed (compared to Smartlight's original slwf01pro21.yaml):
 - slwf01pro21-eng: migrated original slwf01pro21.yaml to new style ESPHome platform configuration
-- slwf01pro21-hun: migrated original slwf01pro21.yaml to new style ESPHome platform configuration + localized the UI to Hungarian
+- slwf01pro21-hun: migrated original slwf01pro21.yaml to new style ESPHome platform configuration + translated the UI into Hungarian
