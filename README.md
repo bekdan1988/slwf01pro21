@@ -11,6 +11,6 @@ Midea, Idea, Neoclima and other Electrolux air conditioners in a smart home:
 
 https://smartlight.me/diy-smart-home/midea-idea-and-other-electrolux-air-conditioners-in-a-smart-house
 
-What changed:
-- slwf01pro21-original-eng: migrated original slwf01pro21.yaml to new style ESPHome platform configuration
-- slwf01pro21-original-hun: migrated original slwf01pro21.yaml to new style ESPHome platform configuration + localized the UI to Hungarian
+What changed (compared to the downloadable file on Smartlight's website):
+- slwf01pro21-eng: migrated original slwf01pro21.yaml to new style ESPHome platform configuration
+- slwf01pro21-hun: migrated original slwf01pro21.yaml to new style ESPHome platform configuration + localized the UI to Hungarian
