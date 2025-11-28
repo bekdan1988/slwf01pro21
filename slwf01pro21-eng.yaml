@@ -47,7 +47,7 @@ wifi:
   # iot_wifi_password: your_iot_wifi_password
   # air-conditioner_static_ip: Air Conditioner's IP address on the IoT Subnet
   # iot_wifi_gateway: The IoT Subnet's default gateway
-  # iot_wifi_subnet: The Subnet's IP address  
+  # iot_wifi_subnet: Subnet Mask
   
   ssid: !secret iot_wifi_ssid
   password: !secret iot_wifi_password
