@@ -6,8 +6,8 @@ substitutions:
   visual_min_temperature: "17 °C"
   visual_max_temperature: "30 °C"
   visual_temperature_step: "0.5 °C"
-  midea_climate_autoconf: true
-  midea_climate_beeper: false
+  midea_climate_autoconf: "true"
+  midea_climate_beeper: "false"
 
 esphome:
   name: "${name}"
