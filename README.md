@@ -13,7 +13,7 @@ https://smartlight.me/smart-home-devices/wifi-devices/wifi-dongle-air-conditione
 - added api_encryption_key to subtitutions & api settings (you must add api_encryption_key: my_api_encryption_key to secrets.yaml)
 - added esphome_ota_password to subtitutions & ota settings (you must add esphome_ota_password: my_esphome_ota_password to secrets.yaml)
 - added translateable entity names to subtitutions (factory_reset_button_name, display_toggle_name, swing_step_name, outdoor_temperature_name, power_usage_name, humidity_setpoint_name, beeper_switch_name, wifi_signal_sensor_name, uptime_sensor_name, uptime_days_sensor_name, uptime_days_unit_of_measurement)
-- renamed entities  (factory_reset_button_name, display_toggle_name, swing_step_name, outdoor_temperature_name, power_usage_name, humidity_setpoint_name, beeper_switch_name, wifi_signal_sensor_name, uptime_sensor_name, uptime_days_sensor_name, uptime_days_unit_of_measurement)
+- renamed entities  (display_toggle_name, swing_step_name, outdoor_temperature_name, power_usage_name, humidity_setpoint_name, beeper_switch_name, wifi_signal_sensor_name, uptime_days_sensor_name)
 
 ## slwf01pro21-hun:
 - all from above
