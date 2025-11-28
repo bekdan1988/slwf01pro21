@@ -1,4 +1,0 @@
-script:
-  - id: on_button_click
-    then:
-      midea_ac.power_toggle:
