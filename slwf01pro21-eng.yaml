@@ -6,8 +6,10 @@ substitutions:
   visual_min_temperature: "17 °C"
   visual_max_temperature: "30 °C"
   visual_temperature_step: "0.5 °C"
-  midea_climate_autoconf: "true"
-  midea_climate_beeper: "false"
+  midea_climate_autoconf: true
+  midea_climate_beeper: false
+  api_encryption_key: !secret api_encryption_key
+  esphome_ota_password: !secret esphome_ota_password
 
 esphome:
   name: "${name}"
@@ -31,6 +33,8 @@ logger:
   baud_rate: 0
 
 api:
+  encryption:
+    key: ${api_encryption_key}
   services:
     - service: follow_me
       variables:
@@ -42,6 +46,7 @@ api:
 
 ota:
   - platform: esphome
+    password: ${esphome_ota_password}
 
 uart:
   tx_pin: 12
