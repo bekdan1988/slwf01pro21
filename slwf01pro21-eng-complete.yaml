@@ -8,6 +8,11 @@ substitutions:
   visual_temperature_step: "0.5 °C"
   midea_climate_autoconf: true
   midea_climate_beeper: false
+
+#############################################
+#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE#
+#############################################
+  
   air_conditioner_api_encryption_key: !secret air_conditioner_api_encryption_key
   air_conditioner_ota_password: !secret air_conditioner_ota_password
   factory_reset_button_name: Factory reset
@@ -21,10 +26,6 @@ substitutions:
   uptime_sensor_name: "Uptime"
   uptime_days_sensor_name: Uptime Days
   uptime_days_unit_of_measurement: days
-
-#############################################
-#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE#
-#############################################
 
 esphome:
   name: "${name}"
