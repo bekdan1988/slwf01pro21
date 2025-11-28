@@ -22,6 +22,10 @@ substitutions:
   uptime_days_sensor_name: Uptime Days
   uptime_days_unit_of_measurement: days
 
+############################################
+#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE#
+############################################
+
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
