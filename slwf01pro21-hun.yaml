@@ -91,8 +91,8 @@ climate:
     period: 1s                                        # Optional
     timeout: 2s                                       # Optional
     num_attempts: 3                                   # Optional
-    autoconf: false                                   # Autoconfigure most options.
-    beeper: true                                      # Beep on commands.
+    autoconf: true                                    # Autoconfigure most options.
+    beeper: false                                     # Beep on commands.
     visual:                                           # Optional. Example of visual settings override.
       min_temperature: "${visual_min_temperature}"    # min: 17
       max_temperature: "${visual_max_temperature}"    # max: 30
