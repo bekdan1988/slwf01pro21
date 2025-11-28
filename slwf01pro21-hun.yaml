@@ -36,11 +36,6 @@ wifi:
 # ADD HOZZÁ AZ ALÁBBI SOROKAT A SECRETS.YAML FÁJLHOZ AZ ESPHOME DEVICE BUILDER-BEN
   # air_conditioner_wifi_ap_ssid: your_air_conditioner_wifi_ap_ssid
   # air_conditioner_wifi_ap_password: your_air_conditioner_wifi_ap_password
-  
-# ap:
-  # ssid: "${air_conditioner_wifi_ap_ssid}"
-  # password: "${air_conditioner_wifi_ap_password}"
-  
 # VAGY HA A LÉGKONDÍCIONÁLÓ MÁSIK ALHÁLÓZATON VAN, (PL.: IoT ESZKÖZÖKNEK LEVÁLASZTOTT ALHÁLÓZAT) HASZNÁLD A MANUÁLIS IP-CÍM MÓDOT
 # ADD HOZZÁ AZ ALÁBBI SOROKAT A SECRETS.YAML FÁJLHOZ AZ ESPHOME DEVICE BUILDER-BEN
   # iot_wifi_ssid: your_iot_wifi_ssid
@@ -55,6 +50,9 @@ wifi:
     static_ip: !secret air-conditioner_static_ip
     gateway: !secret iot_wifi_gateway
     subnet: !secret iot_wifi_subnet
+    ap:
+      ssid: "${air_conditioner_wifi_ap_ssid}"
+      password: "${air_conditioner_wifi_ap_password}"
 
 # web_server:
   # port: 80
