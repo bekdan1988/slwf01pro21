@@ -1,4 +1,0 @@
-wifi:
-  ap:
-    ssid: "${wifi_ap_ssid}"
-    password: "${wifi_ap_password}"
