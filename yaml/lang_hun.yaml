@@ -1,4 +1,15 @@
 substitutions:
+  name: air-conditioner
+  friendly_name: "Air Conditioner"
+  air_conditioner_wifi_ap_ssid: !secret air_conditioner_wifi_ap_ssid
+  air_conditioner_wifi_ap_password: !secret air_conditioner_wifi_ap_password
+  visual_min_temperature: "17 °C"
+  visual_max_temperature: "30 °C"
+  visual_temperature_step: "0.5 °C"
+  midea_climate_autoconf: true
+  midea_climate_beeper: false
+  air_conditioner_api_encryption_key: !secret air_conditioner_api_encryption_key
+  air_conditioner_ota_password: !secret air_conditioner_ota_password
   factory_reset_button_name: Gyári visszaállítás
   display_toggle_name: Kijelző kapcsoló
   swing_step_name: Zsalumozgatás
