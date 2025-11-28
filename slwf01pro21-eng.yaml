@@ -11,15 +11,15 @@ substitutions:
   api_encryption_key: !secret api_encryption_key
   esphome_ota_password: !secret esphome_ota_password
   factory_reset_button_name: Factory reset
-  display_toggle_name: ${friendly_name} Display Toggle
-  swing_step_name: ${friendly_name} Swing Step
-  outdoor_temperature_name: ${friendly_name} Outdoor Temperature
-  power_usage_name: ${friendly_name} Power Usage
-  humidity_setpoint_name: ${friendly_name} Indoor Humidity
-  beeper_switch_name: ${friendly_name} Beeper
-  wifi_signal_sensor_name: ${friendly_name} Wi-Fi Signal
+  display_toggle_name: Display Toggle
+  swing_step_name: Swing Step
+  outdoor_temperature_name: Outdoor Temperature
+  power_usage_name: Power Usage
+  humidity_setpoint_name: Indoor Humidity
+  beeper_switch_name: Beeper
+  wifi_signal_sensor_name: Wi-Fi Signal
   uptime_sensor_name: "Uptime"
-  uptime_days_sensor_name: ${friendly_name} Uptime Days
+  uptime_days_sensor_name: Uptime Days
   uptime_days_unit_of_measurement: days
 
 esphome:
