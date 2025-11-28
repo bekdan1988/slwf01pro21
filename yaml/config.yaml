@@ -52,45 +52,6 @@ button:
     on_press:
       midea_ac.swing_step:
 
-climate:
-  - platform: midea
-    name: ${friendly_name}                            
-    id: midea_climate                           
-    period: 1s                                        
-    timeout: 2s                                       
-    num_attempts: 3                                   
-    autoconf: ${midea_climate_autoconf}
-    beeper: ${midea_climate_beeper}                                     
-    visual:                                           
-      min_temperature: "${visual_min_temperature}"    
-      max_temperature: "${visual_max_temperature}"    
-      temperature_step: "${visual_temperature_step}"  
-    supported_modes:                                  
-      - FAN_ONLY                                      
-      - HEAT_COOL
-      - COOL
-      - HEAT
-      - DRY
-    custom_fan_modes:
-      - SILENT
-      - TURBO
-    supported_presets:          
-      - ECO
-      - BOOST
-      - SLEEP                   
-    custom_presets:             
-      - FREEZE_PROTECTION
-    supported_swing_modes:
-      - VERTICAL                
-      - HORIZONTAL
-      - BOTH
-    outdoor_temperature:  
-      name: ${outdoor_temperature_name}
-    power_usage:                
-      name: ${power_usage_name}
-    humidity_setpoint:
-      name: ${humidity_setpoint_name}
-
 switch:
   - platform: template
     name: ${beeper_switch_name}
