@@ -32,8 +32,8 @@ substitutions:
 ##################################################
 
 wifi:
-# USE AP MODE, IF THE AC IS ON THE SAME SUBNET AS YOUR HOME ASSISTANT SERVER
-# ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
+# HASZNÁLD AZ AP MÓDOT, HA A LÉGKONDÍCIONÁLÓ UGYANAZON AZ ALHÁLÓZATON VAN, MINT A HOME ASSISTANT SZERVER
+# ADD HOZZÁ AZ ALÁBBI SOROKAT A SECRETS.YAML FÁJLHOZ AZ ESPHOME DEVICE BUILDER-BEN
   # air_conditioner_wifi_ap_ssid: your_air_conditioner_wifi_ap_ssid
   # air_conditioner_wifi_ap_password: your_air_conditioner_wifi_ap_password
   
@@ -41,13 +41,13 @@ wifi:
   # ssid: "${air_conditioner_wifi_ap_ssid}"
   # password: "${air_conditioner_wifi_ap_password}"
   
-# OR IF THE AC IS ON ANOTHER SUBNET (E.G. FOR IoT DEVICES) USE MANUAL IP MODE
-# ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
+# VAGY HA A LÉGKONDÍCIONÁLÓ MÁSIK ALHÁLÓZATON VAN, (PL.: IoT ESZKÖZÖKNEK LEVÁLASZTOTT ALHÁLÓZAT) HASZNÁLD A MANUÁLIS IP-CÍM MÓDOT
+# ADD HOZZÁ AZ ALÁBBI SOROKAT A SECRETS.YAML FÁJLHOZ AZ ESPHOME DEVICE BUILDER-BEN
   # iot_wifi_ssid: your_iot_wifi_ssid
   # iot_wifi_password: your_iot_wifi_password
-  # air-conditioner_static_ip: Air Conditioner's IP address on the IoT Subnet
-  # iot_wifi_gateway: The IoT Subnet's default gateway
-  # iot_wifi_subnet: The Subnet's IP address  
+  # air-conditioner_static_ip: A Légkondícionáló IP-címe AZ IoT alhálózaton
+  # iot_wifi_gateway: Az IoT alhálóüzat átjárója
+  # iot_wifi_subnet: Az alhálózat IP-címe  
   
   ssid: !secret iot_wifi_ssid
   password: !secret iot_wifi_password
@@ -108,7 +108,7 @@ climate:
       # name: ${humidity_setpoint_name}
 
 ##################################################
-#A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI      #
+#A VONAL ALATTI RÉSZT MÁR NEM KELL SZERKESZTENI  #
 ##################################################
       
 esphome:
