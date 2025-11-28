@@ -19,7 +19,7 @@ substitutions:
   beeper_switch_name: Hangjelzés
   wifi_signal_sensor_name: Wi-Fi jel
   uptime_sensor_name: "Üzemidő"
-  uptime_days_sensor_name: Üzemidő
+  uptime_days_sensor_name: Üzemidő napban
   uptime_days_unit_of_measurement: nap
 
 esphome:
