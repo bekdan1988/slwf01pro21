@@ -23,7 +23,7 @@ substitutions:
   uptime_days_unit_of_measurement: nap
 
 ############################################
-#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE#
+#A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI#
 ############################################
 
 esphome:
