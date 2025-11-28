@@ -21,3 +21,6 @@ api:
 ota:
   - platform: esphome
     password: ${air_conditioner_ota_password}
+
+web_server:
+  port: 80
