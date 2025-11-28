@@ -1,0 +1,15 @@
+sensor:
+  - platform: wifi_signal
+    name: ${wifi_signal_sensor_name}
+    update_interval: 60s
+  - platform: uptime
+    name: "${uptime_sensor_name}"
+    id: uptime_sec
+    internal: true
+  - platform: template
+    name: ${uptime_days_sensor_name}
+    lambda: |-
+      return (id(uptime_sec).state/60)/60/24;
+    icon: mdi:clock-start
+    unit_of_measurement: ${uptime_days_unit_of_measurement}
+    update_interval: 60s
