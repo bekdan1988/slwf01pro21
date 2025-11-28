@@ -1,0 +1,12 @@
+strings:
+  factory_reset_button_name: Gyári visszaállítás
+  display_toggle_name: Kijelző kapcsoló
+  swing_step_name: Zsalumozgatás
+  outdoor_temperature_name: Külső hőmérséklet
+  power_usage_name: Energiafogyasztás
+  humidity_setpoint_name: Beltéri páratartalom
+  beeper_switch_name: Hangjelzés
+  wifi_signal_sensor_name: Wi-Fi jel
+  uptime_sensor_name: "Üzemidő"
+  uptime_days_sensor_name: Üzemidő napban
+  uptime_days_unit_of_measurement: nap
