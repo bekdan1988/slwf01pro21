@@ -43,17 +43,17 @@ wifi:
   # air-conditioner_static_ip: A Légkondícionáló IP-címe AZ IoT alhálózaton
   # iot_wifi_gateway: Az IoT alhálóüzat átjárója
   # iot_wifi_subnet: Alhálózati maszk  
-  
+
+# ap:
+  # ssid: "${air_conditioner_wifi_ap_ssid}"
+  # password: "${air_conditioner_wifi_ap_password}"
   ssid: !secret iot_wifi_ssid
   password: !secret iot_wifi_password
   manual_ip:
     static_ip: !secret air-conditioner_static_ip
     gateway: !secret iot_wifi_gateway
     subnet: !secret iot_wifi_subnet
-    ap:
-      ssid: "${air_conditioner_wifi_ap_ssid}"
-      password: "${air_conditioner_wifi_ap_password}"
-
+    
 # web_server:
   # port: 80
 
