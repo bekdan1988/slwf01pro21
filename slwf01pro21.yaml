@@ -1,13 +1,9 @@
 packages:
-  - climate: github://bekdan1988/slwf01pro21/yaml/climate.yaml@main
-  
-  - device_base: github://bekdan1988/slwf01pro21/yaml/device_base.yaml@main
+  - config: github://bekdan1988/slwf01pro21/yaml/config.yaml@main
     web_server: !remove
-  
   - strings_en: github://bekdan1988/slwf01pro21/yaml/strings_en.yaml@main
   # OR FOR HUNGARIAN LANGUAGE
   # - strings_hu: github://bekdan1988/slwf01pro21/yaml/strings_hu.yaml@main
-  
   # - wifi: github://bekdan1988/slwf01pro21/yaml/wifi.yaml@main
     # OR IF THE AC IS ON AN ANOTHER SUBNET FOR IoT DEVICES
       # ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
@@ -18,7 +14,7 @@ packages:
         # iot_wifi_subnet: The Subnet's IP address  
   - wifi_iot: github://bekdan1988/slwf01pro21/yaml/wifi_iot.yaml@main
 
-substitutions:
+subtitutions:
   name: air-conditioner
   friendly_name: "Air Conditioner"
   air_conditioner_wifi_ap_ssid: !secret air_conditioner_wifi_ap_ssid
