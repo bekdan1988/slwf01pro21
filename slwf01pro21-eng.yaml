@@ -45,7 +45,7 @@ logger:
 
 api:
   encryption:
-    key: ${api_encryption_key}
+    key: ${air_conditioner_api_encryption_key}
   services:
     - service: follow_me
       variables:
@@ -57,7 +57,7 @@ api:
 
 ota:
   - platform: esphome
-    password: ${esphome_ota_password}
+    password: ${air_conditioner_ota_password}
 
 uart:
   tx_pin: 12
