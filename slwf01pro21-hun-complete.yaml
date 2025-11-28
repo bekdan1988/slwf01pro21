@@ -8,6 +8,11 @@ substitutions:
   visual_temperature_step: "0.5 °C"
   midea_climate_autoconf: true
   midea_climate_beeper: false
+
+############################################
+#A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI#
+############################################
+
   air_conditioner_api_encryption_key: !secret air_conditioner_api_encryption_key
   air_conditioner_ota_password: !secret air_conditioner_ota_password
   factory_reset_button_name: Gyári visszaállítás
@@ -21,11 +26,7 @@ substitutions:
   uptime_sensor_name: "Üzemidő"
   uptime_days_sensor_name: Üzemidő napban
   uptime_days_unit_of_measurement: nap
-
-############################################
-#A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI#
-############################################
-
+  
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
@@ -38,9 +39,22 @@ esp8266:
   board: esp12e
 
 wifi:
-  ap:
-    ssid: "${air_conditioner_wifi_ap_ssid}"
-    password: "${air_conditioner_wifi_ap_password}"
+  # ap:
+    # ssid: "${air_conditioner_wifi_ap_ssid}"
+    # password: "${air_conditioner_wifi_ap_password}"
+  # OR IF THE AC IS ON AN ANOTHER SUBNET FOR IoT DEVICES
+  # ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
+    # iot_wifi_ssid: your_iot_wifi_ssid
+    # iot_wifi_password: your_iot_wifi_password
+    # air-conditioner_static_ip: Air Conditioner's IP address on the IoT Subnet
+    # iot_wifi_gateway: The IoT Subnet's default gateway
+    # iot_wifi_subnet: The Subnet's IP address  
+  ssid: !secret iot_wifi_ssid
+  password: !secret iot_wifi_password
+  manual_ip:
+    static_ip: !secret air-conditioner_static_ip
+    gateway: !secret iot_wifi_gateway
+    subnet: !secret iot_wifi_subnet
 
 captive_portal:
 
