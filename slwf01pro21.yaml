@@ -16,71 +16,37 @@ packages:
         # iot_wifi_subnet: The Subnet's IP address  
   - wifi_iot: github://bekdan1988/slwf01pro21/yaml/wifi_iot.yaml@main
 
-api:
-  services:
-    - service: follow_me
-      variables:
-        temperature: float
-      then:
-        midea_ac.follow_me:
-          temperature: !lambda "return temperature;"
-          beeper: false
-
-uart:
-  tx_pin: 12
-  rx_pin: 14
-  baud_rate: 9600
+substitutions:
+  name: air-conditioner
+  friendly_name: "Air Conditioner"
+  air_conditioner_wifi_ap_ssid: !secret air_conditioner_wifi_ap_ssid
+  air_conditioner_wifi_ap_password: !secret air_conditioner_wifi_ap_password
+  visual_min_temperature: "17 °C"
+  visual_max_temperature: "30 °C"
+  visual_temperature_step: "0.5 °C"
+  midea_climate_autoconf: true
+  midea_climate_beeper: false
   
-button:
-  - platform: factory_reset
-    id: factory_reset_btn
-    name: ${factory_reset_button_name}
-  - platform: template
-    name: ${display_toggle_name}
-    id: midea_display_toggle
-    icon: mdi:theme-light-dark
-    on_press:
-      midea_ac.display_toggle:
-  - platform: template
-    name: ${swing_step_name}
-    id: midea_swing_step
-    icon: mdi:tailwind
-    on_press:
-      midea_ac.swing_step:
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+  name_add_mac_suffix: true
+  project:
+    name: SMLIGHT.SLWF-01Pro
+    version: "2.1"
 
-switch:
-  - platform: template
-    name: ${beeper_switch_name}
-    id: midea_beeper
-    icon: mdi:volume-source
-    restore_mode: RESTORE_DEFAULT_OFF
-    optimistic: true
-    turn_on_action:
-      midea_ac.beeper_on:
-    turn_off_action:
-      midea_ac.beeper_off:
+esp8266:
+  board: esp12e
 
-remote_transmitter:
-  pin: GPIO13                       
-  carrier_duty_percent: 100%
+captive_portal:
 
-sensor:
-  - platform: wifi_signal
-    name: ${wifi_signal_sensor_name}
-    update_interval: 60s
-  - platform: uptime
-    name: "${uptime_sensor_name}"
-    id: uptime_sec
-    internal: true
-  - platform: template
-    name: ${uptime_days_sensor_name}
-    lambda: |-
-      return (id(uptime_sec).state/60)/60/24;
-    icon: mdi:clock-start
-    unit_of_measurement: ${uptime_days_unit_of_measurement}
-    update_interval: 60s
-    
-script:
-  - id: on_button_click
-    then:
-      midea_ac.power_toggle:
+logger:
+  baud_rate: 0
+
+api:
+  encryption:
+    key: ${air_conditioner_api_encryption_key}
+
+ota:
+  - platform: esphome
+    password: ${air_conditioner_ota_password}
