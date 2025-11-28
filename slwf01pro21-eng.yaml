@@ -36,19 +36,17 @@ wifi:
 # ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
   # air_conditioner_wifi_ap_ssid: your_air_conditioner_wifi_ap_ssid
   # air_conditioner_wifi_ap_password: your_air_conditioner_wifi_ap_password
-  
-# ap:
-  # ssid: "${air_conditioner_wifi_ap_ssid}"
-  # password: "${air_conditioner_wifi_ap_password}"
-  
 # OR IF THE AC IS ON ANOTHER SUBNET (E.G. FOR IoT DEVICES) USE MANUAL IP MODE
 # ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
   # iot_wifi_ssid: your_iot_wifi_ssid
   # iot_wifi_password: your_iot_wifi_password
   # air-conditioner_static_ip: Air Conditioner's IP address on the IoT Subnet
   # iot_wifi_gateway: The IoT Subnet's default gateway
-  # iot_wifi_subnet: Subnet Mask
-  
+  # iot_wifi_subnet: Subnet Mask  
+
+# ap:
+  # ssid: "${air_conditioner_wifi_ap_ssid}"
+  # password: "${air_conditioner_wifi_ap_password}"
   ssid: !secret iot_wifi_ssid
   password: !secret iot_wifi_password
   manual_ip:
