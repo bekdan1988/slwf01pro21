@@ -108,7 +108,7 @@ climate:
     # name: ${humidity_setpoint_name}
 
 ##################################################
-#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE     #
+#BELOW THIS LINE IS NOTHING TO EDIT              #
 ##################################################
 
 esphome:
