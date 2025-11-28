@@ -1,7 +1,9 @@
 packages:
   - climate: github://bekdan1988/slwf01pro21/yaml/climate.yaml@main
+  
   - device_base: github://bekdan1988/slwf01pro21/yaml/device_base.yaml@main
     web_server: !remove
+  
   - strings_en: github://bekdan1988/slwf01pro21/yaml/strings_en.yaml@main
   # OR FOR HUNGARIAN LANGUAGE
   # - strings_hu: github://bekdan1988/slwf01pro21/yaml/strings_hu.yaml@main
@@ -26,7 +28,14 @@ substitutions:
   visual_temperature_step: "0.5 °C"
   midea_climate_autoconf: true
   midea_climate_beeper: false
-  
+
+#############################################
+#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE#
+#############################################
+############################################
+#A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI#
+############################################
+
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
