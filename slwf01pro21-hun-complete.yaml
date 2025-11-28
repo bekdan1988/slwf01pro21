@@ -22,6 +22,10 @@ substitutions:
   uptime_days_sensor_name: Üzemidő napban
   uptime_days_unit_of_measurement: nap
 
+############################################
+#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE#
+############################################
+
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
