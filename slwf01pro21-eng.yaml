@@ -10,6 +10,17 @@ substitutions:
   midea_climate_beeper: false
   api_encryption_key: !secret api_encryption_key
   esphome_ota_password: !secret esphome_ota_password
+  factory_reset_button_name: Factory reset
+  display_toggle_name: ${friendly_name} Display Toggle
+  swing_step_name: ${friendly_name} Swing Step
+  outdoor_temperature_name: ${friendly_name} Outdoor Temperature
+  power_usage_name: ${friendly_name} Power Usage
+  humidity_setpoint_name: ${friendly_name} Indoor Humidity
+  beeper_switch_name: ${friendly_name} Beeper
+  wifi_signal_sensor_name: ${friendly_name} Wi-Fi Signal
+  uptime_sensor_name: "Uptime"
+  uptime_days_sensor_name: ${friendly_name} Uptime Days
+  uptime_days_unit_of_measurement: days
 
 esphome:
   name: "${name}"
@@ -56,15 +67,15 @@ uart:
 button:
   - platform: factory_reset
     id: factory_reset_btn
-    name: Factory reset
+    name: ${factory_reset_button_name}
   - platform: template
-    name: ${friendly_name} Display Toggle
+    name: ${display_toggle_name}
     id: midea_display_toggle
     icon: mdi:theme-light-dark
     on_press:
       midea_ac.display_toggle:
   - platform: template
-    name: ${friendly_name} Swing Step
+    name: ${swing_step_name}
     id: midea_swing_step
     icon: mdi:tailwind
     on_press:
@@ -103,15 +114,15 @@ climate:
       - HORIZONTAL
       - BOTH
     outdoor_temperature:  
-      name: ${friendly_name} Outdoor Temperature
+      name: ${outdoor_temperature_name}
     power_usage:                
-      name: ${friendly_name} Power Usage
+      name: ${power_usage_name}
     humidity_setpoint:
-      name: ${friendly_name} Indoor Humidity
+      name: ${humidity_setpoint_name}
 
 switch:
   - platform: template
-    name: ${friendly_name} Beeper
+    name: ${beeper_switch_name}
     id: midea_beeper
     icon: mdi:volume-source
     restore_mode: RESTORE_DEFAULT_OFF
@@ -127,18 +138,18 @@ remote_transmitter:
 
 sensor:
   - platform: wifi_signal
-    name: ${friendly_name} Wi-Fi Signal
+    name: ${wifi_signal_sensor_name}
     update_interval: 60s
   - platform: uptime
-    name: "Uptime"
+    name: "${uptime_sensor_name}"
     id: uptime_sec
     internal: true
   - platform: template
-    name: ${friendly_name} Uptime Days
+    name: ${uptime_days_sensor_name}
     lambda: |-
       return (id(uptime_sec).state/60)/60/24;
     icon: mdi:clock-start
-    unit_of_measurement: days
+    unit_of_measurement: ${uptime_days_unit_of_measurement}
     update_interval: 60s
     
 script:
