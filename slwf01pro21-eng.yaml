@@ -100,12 +100,12 @@ climate:
 #FEEL FREE TO EDIT BELOW THIS LINE               #
 ################################################## 
     
-    # outdoor_temperature:  
-      # name: ${outdoor_temperature_name}
+  # outdoor_temperature:  
+    # name: ${outdoor_temperature_name}
     power_usage:                
       name: ${power_usage_name}
-    # humidity_setpoint:
-      # name: ${humidity_setpoint_name}
+  # humidity_setpoint:
+    # name: ${humidity_setpoint_name}
 
 ##################################################
 #YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE     #
