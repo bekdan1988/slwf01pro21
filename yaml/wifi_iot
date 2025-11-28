@@ -1,0 +1,7 @@
+wifi:
+  ssid: !secret iot_wifi_ssid
+  password: !secret iot_wifi_password
+  manual_ip:
+    static_ip: !secret air-conditioner_static_ip
+    gateway: !secret iot_wifi_gateway
+    subnet: !secret iot_wifi_subnet
