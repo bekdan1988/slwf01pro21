@@ -41,7 +41,7 @@ wifi:
   # iot_wifi_ssid: your_iot_wifi_ssid
   # iot_wifi_password: your_iot_wifi_password
   # air-conditioner_static_ip: A Légkondícionáló IP-címe AZ IoT alhálózaton
-  # iot_wifi_gateway: Az IoT alhálóüzat átjárója
+  # iot_wifi_gateway: Az IoT alhálózat átjárója
   # iot_wifi_subnet: Alhálózati maszk  
 
 # ap:
