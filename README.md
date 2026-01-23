@@ -19,4 +19,4 @@ https://smartlight.me/smart-home-devices/wifi-devices/wifi-dongle-air-conditione
 
 ## slwf01pro21-hun:
 - all from above
-- translated the UI into Hungarian
+- translated the Home Assistant UI elements into Hungarian
