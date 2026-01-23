@@ -5,7 +5,7 @@ https://smartlight.me/smart-home-devices/wifi-devices/wifi-dongle-air-conditione
 # Changelog (compared to Smartlight's original slwf01pro21.yaml):
 
 ## slwf01pro21-eng:
-- removed code comments and added new comments to mark the code, where and how you can edit it
+- removed code comments and added new comments to mark the code, where you can edit it
 - migrated original slwf01pro21.yaml to new style ESPHome platform configuration
 - changed value of wifi_ap_password from "slwf01pro" to !secret wifi_ap_password (you must add wifi_ap_password: my_wifi_ap_password to secrets.yaml)
 - changed value of autoconf to true
