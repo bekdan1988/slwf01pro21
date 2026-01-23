@@ -1,14 +1,15 @@
 substitutions:
   name: air-conditioner
   friendly_name: "Air Conditioner"
-  air_conditioner_wifi_ap_ssid: !secret air_conditioner_wifi_ap_ssid
-  air_conditioner_wifi_ap_password: !secret air_conditioner_wifi_ap_password
   visual_min_temperature: "17 °C"
   visual_max_temperature: "30 °C"
   visual_temperature_step: "0.5 °C"
   midea_climate_autoconf: true
   midea_climate_beeper: false
 
+# web_server:
+  # port: 80
+  
 ##################################################
 #YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE     #
 ##################################################
@@ -27,39 +28,16 @@ substitutions:
   uptime_days_sensor_name: Uptime Days
   uptime_days_unit_of_measurement: days
 
-##################################################
-#FEEL FREE TO EDIT BELOW THIS LINE               #
-##################################################  
-
 wifi:
-# USE AP MODE, IF THE AC IS ON THE SAME SUBNET AS YOUR HOME ASSISTANT SERVER
-# ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
-  # air_conditioner_wifi_ap_ssid: your_air_conditioner_wifi_ap_ssid
-  # air_conditioner_wifi_ap_password: your_air_conditioner_wifi_ap_password
-# OR IF THE AC IS ON ANOTHER SUBNET (E.G. FOR IoT DEVICES) USE MANUAL IP MODE
-# ADD THE FOLLOWING LINES TO SECRETS.YAML IN ESPHOME DEVICE BUILDER
-  # iot_wifi_ssid: your_iot_wifi_ssid
-  # iot_wifi_password: your_iot_wifi_password
-  # air-conditioner_static_ip: Air Conditioner's IP address on the IoT Subnet
-  # iot_wifi_gateway: The IoT Subnet's default gateway
-  # iot_wifi_subnet: Subnet Mask  
-
-# ap:
-  # ssid: "${air_conditioner_wifi_ap_ssid}"
-  # password: "${air_conditioner_wifi_ap_password}"
   ssid: !secret iot_wifi_ssid
   password: !secret iot_wifi_password
   manual_ip:
     static_ip: !secret air-conditioner_static_ip
     gateway: !secret iot_wifi_gateway
     subnet: !secret iot_wifi_subnet
-
-# web_server:
-  # port: 80
-
-##################################################
-#YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE     #
-##################################################
+  ap:
+    ssid: !secret air_conditioner_wifi_ap_ssid
+    password: !secret air_conditioner_wifi_ap_password
 
 climate:
   - platform: midea
