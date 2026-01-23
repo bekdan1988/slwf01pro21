@@ -1,13 +1,14 @@
 substitutions:
-  name: legkondicionalo
-  friendly_name: "Légkondícionáló"
-  air_conditioner_wifi_ap_ssid: !secret air_conditioner_wifi_ap_ssid
-  air_conditioner_wifi_ap_password: !secret air_conditioner_wifi_ap_password
+  name: emelet-legkondicionalo
+  friendly_name: "Emelet légkondícionáló"
   visual_min_temperature: "17 °C"
   visual_max_temperature: "30 °C"
   visual_temperature_step: "0.5 °C"
   midea_climate_autoconf: true
   midea_climate_beeper: false
+
+# web_server:
+  # port: 80
 
 ##################################################
 #A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI      #
@@ -27,39 +28,16 @@ substitutions:
   uptime_days_sensor_name: Üzemidő napban
   uptime_days_unit_of_measurement: nap
 
-##################################################
-#A VONAL ALATTI RÉSZ ISMÉT SZERKESZTHETŐ         #
-##################################################
-
 wifi:
-# HASZNÁLD AZ AP MÓDOT, HA A LÉGKONDÍCIONÁLÓ UGYANAZON AZ ALHÁLÓZATON VAN, MINT A HOME ASSISTANT SZERVER
-# ADD HOZZÁ AZ ALÁBBI SOROKAT A SECRETS.YAML FÁJLHOZ AZ ESPHOME DEVICE BUILDER-BEN
-  # air_conditioner_wifi_ap_ssid: your_air_conditioner_wifi_ap_ssid
-  # air_conditioner_wifi_ap_password: your_air_conditioner_wifi_ap_password
-# VAGY HA A LÉGKONDÍCIONÁLÓ MÁSIK ALHÁLÓZATON VAN, (PL.: IoT ESZKÖZÖKNEK LEVÁLASZTOTT ALHÁLÓZAT) HASZNÁLD A MANUÁLIS IP-CÍM MÓDOT
-# ADD HOZZÁ AZ ALÁBBI SOROKAT A SECRETS.YAML FÁJLHOZ AZ ESPHOME DEVICE BUILDER-BEN
-  # iot_wifi_ssid: your_iot_wifi_ssid
-  # iot_wifi_password: your_iot_wifi_password
-  # air-conditioner_static_ip: A Légkondícionáló IP-címe AZ IoT alhálózaton
-  # iot_wifi_gateway: Az IoT alhálózat átjárója
-  # iot_wifi_subnet: Alhálózati maszk  
-
-# ap:
-  # ssid: "${air_conditioner_wifi_ap_ssid}"
-  # password: "${air_conditioner_wifi_ap_password}"
   ssid: !secret iot_wifi_ssid
   password: !secret iot_wifi_password
   manual_ip:
     static_ip: !secret air-conditioner_static_ip
     gateway: !secret iot_wifi_gateway
     subnet: !secret iot_wifi_subnet
-    
-# web_server:
-  # port: 80
-
-##################################################
-#A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI      #
-##################################################
+  ap:
+    ssid: !secret air_conditioner_wifi_ap_ssid
+    password: !secret air_conditioner_wifi_ap_password
 
 climate:
   - platform: midea
