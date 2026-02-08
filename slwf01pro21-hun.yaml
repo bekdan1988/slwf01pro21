@@ -1,6 +1,6 @@
 substitutions:
-  name: "emelet-legkondicionalo"
-  friendly_name: "Emelet légkondícionáló"
+  name: "legkondicionalo"
+  friendly_name: "Légkondícionáló"
   visual_min_temperature: "17 °C"
   visual_max_temperature: "30 °C"
   visual_temperature_step: "0.5 °C"
