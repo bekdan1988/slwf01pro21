@@ -72,7 +72,7 @@ climate:
   # outdoor_temperature:  
     # name: ${outdoor_temperature_name}
     power_usage:                
-      name: ${power_usage_name}
+      name: "${power_usage_name}"
   # humidity_setpoint:
     # name: ${humidity_setpoint_name}
 
