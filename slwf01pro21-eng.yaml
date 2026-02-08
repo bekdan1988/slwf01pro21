@@ -1,53 +1,46 @@
 substitutions:
-  name: air-conditioner
+  name: "air-conditioner"
   friendly_name: "Air Conditioner"
   visual_min_temperature: "17 °C"
   visual_max_temperature: "30 °C"
   visual_temperature_step: "0.5 °C"
-  midea_climate_autoconf: true
-  midea_climate_beeper: false
+  midea_climate_autoconf: "true"
+  midea_climate_beeper: "false"
 
-# web_server:
-  # port: 80
-  
 ##################################################
 #YOU SHOULD NOT NEED TO EDIT BELOW THIS LINE     #
 ##################################################
 
   air_conditioner_api_encryption_key: !secret air_conditioner_api_encryption_key
   air_conditioner_ota_password: !secret air_conditioner_ota_password
-  factory_reset_button_name: Factory reset
-  display_toggle_name: Display Toggle
-  swing_step_name: Swing Step
-  outdoor_temperature_name: Outdoor Temperature
-  power_usage_name: Power Usage
-  humidity_setpoint_name: Indoor Humidity
-  beeper_switch_name: Beeper
-  wifi_signal_sensor_name: Wi-Fi Signal
+  factory_reset_button_name: "Factory reset"
+  display_toggle_name: "Display Toggle"
+  swing_step_name: "Swing Step"
+  outdoor_temperature_name: "Outdoor Temperature"
+  power_usage_name: "Power Usage"
+  humidity_setpoint_name: "Indoor Humidity"
+  beeper_switch_name: "Beeper"
+  wifi_signal_sensor_name: "Wi-Fi Signal"
   uptime_sensor_name: "Uptime"
-  uptime_days_sensor_name: Uptime Days
-  uptime_days_unit_of_measurement: days
+  uptime_days_sensor_name: "Uptime Days"
+  uptime_days_unit_of_measurement: "days"
 
 wifi:
-  ssid: !secret iot_wifi_ssid
-  password: !secret iot_wifi_password
-  manual_ip:
-    static_ip: !secret air-conditioner_static_ip
-    gateway: !secret iot_wifi_gateway
-    subnet: !secret iot_wifi_subnet
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
   ap:
     ssid: !secret air_conditioner_wifi_ap_ssid
     password: !secret air_conditioner_wifi_ap_password
 
 climate:
   - platform: midea
-    name: ${friendly_name}                            
+    name: "${friendly_name}"                         
     id: midea_climate                           
     period: 1s                                        
     timeout: 2s                                       
     num_attempts: 3                                   
-    autoconf: ${midea_climate_autoconf}
-    beeper: ${midea_climate_beeper}                                     
+    autoconf: "${midea_climate_autoconf}"
+    beeper: "${midea_climate_beeper}"                                     
     visual:                                           
       min_temperature: "${visual_min_temperature}"    
       max_temperature: "${visual_max_temperature}"    
@@ -105,7 +98,7 @@ logger:
 
 api:
   encryption:
-    key: ${air_conditioner_api_encryption_key}
+    key: "${air_conditioner_api_encryption_key}"
   services:
     - service: follow_me
       variables:
@@ -117,7 +110,7 @@ api:
 
 ota:
   - platform: esphome
-    password: ${air_conditioner_ota_password}
+    password: "${air_conditioner_ota_password}"
 
 uart:
   tx_pin: 12
@@ -127,15 +120,15 @@ uart:
 button:
   - platform: factory_reset
     id: factory_reset_btn
-    name: ${factory_reset_button_name}
+    name: "${factory_reset_button_name}"
   - platform: template
-    name: ${display_toggle_name}
+    name: "${display_toggle_name}"
     id: midea_display_toggle
     icon: mdi:theme-light-dark
     on_press:
       midea_ac.display_toggle:
   - platform: template
-    name: ${swing_step_name}
+    name: "${swing_step_name}"
     id: midea_swing_step
     icon: mdi:tailwind
     on_press:
@@ -143,7 +136,7 @@ button:
 
 switch:
   - platform: template
-    name: ${beeper_switch_name}
+    name: "${beeper_switch_name}"
     id: midea_beeper
     icon: mdi:volume-source
     restore_mode: RESTORE_DEFAULT_OFF
@@ -159,18 +152,18 @@ remote_transmitter:
 
 sensor:
   - platform: wifi_signal
-    name: ${wifi_signal_sensor_name}
+    name: "${wifi_signal_sensor_name}"
     update_interval: 60s
   - platform: uptime
     name: "${uptime_sensor_name}"
     id: uptime_sec
     internal: true
   - platform: template
-    name: ${uptime_days_sensor_name}
+    name: "${uptime_days_sensor_name}"
     lambda: |-
       return (id(uptime_sec).state/60)/60/24;
     icon: mdi:clock-start
-    unit_of_measurement: ${uptime_days_unit_of_measurement}
+    unit_of_measurement: "${uptime_days_unit_of_measurement}"
     update_interval: 60s
     
 script:
