@@ -11,8 +11,13 @@ substitutions:
 #A VONAL ALATTI RÉSZT NEM KELL SZERKESZTENI      #
 ##################################################
 
-  air_conditioner_api_encryption_key: !secret air_conditioner_api_encryption_key
-  air_conditioner_ota_password: !secret air_conditioner_ota_password
+  api_encryption_key: !secret air_conditioner_api_encryption_key
+  ota_password: !secret air_conditioner_ota_password
+  wifi_ssid: !secret wifi_ssid
+  wifi_password: !secret wifi_password
+  wifi_ap_ssid: !secret air_conditioner_wifi_ap_ssid
+  wifi_ap_password: !secret air_conditioner_wifi_ap_password
+  
   factory_reset_button_name: "Gyári visszaállítás"
   display_toggle_name: "Kijelző kapcsoló"
   swing_step_name: "Zsalumozgatás"
@@ -26,11 +31,11 @@ substitutions:
   uptime_days_unit_of_measurement: "nap"
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+  ssid: "${wifi_ssid}"
+  password: "${wifi_password}"
   ap:
-    ssid: !secret air_conditioner_wifi_ap_ssid
-    password: !secret air_conditioner_wifi_ap_password
+    ssid: "${wifi_ap_ssid}"
+    password: "${wifi_ap_password}"
 
 climate:
   - platform: midea
@@ -97,7 +102,7 @@ logger:
 
 api:
   encryption:
-    key: "${air_conditioner_api_encryption_key}"
+    key: "${api_encryption_key}"
   services:
     - service: follow_me
       variables:
@@ -109,7 +114,7 @@ api:
 
 ota:
   - platform: esphome
-    password: "${air_conditioner_ota_password}"
+    password: "${ota_password}"
 
 uart:
   tx_pin: 12
